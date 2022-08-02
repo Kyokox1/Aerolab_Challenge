@@ -1,0 +1,21 @@
+.nav {
+	display: flex;
+	/* justify-content: space-around; */
+	margin: 0 auto;
+	max-width: 90%;
+	align-items: center;
+	gap: 20px;
+	padding: 10px 0;
+	font-weight: 500;
+}
+
+.filters {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	color: #757171;
+}
+
+.arrows {
+	margin-left: auto;
+}
