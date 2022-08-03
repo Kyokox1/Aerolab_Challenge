@@ -5,23 +5,25 @@ import coin from "../../../public/assets/icons/coin.svg";
 import logo from "../../../public/assets/logo.svg";
 import { PointsModal } from "../../components/points-modal/PointsModal";
 import { fetchUser } from "../../redux/slices/user";
-import { postPoints } from "../../services/api";
 
 import styles from "./header.module.css";
 
 export const Header = () => {
 	const [showPointsModal, setShowPointsModal] = useState(false);
+	// ? Redux states
 	const user = useSelector((state) => state.user.data);
+	const buyProduct = useSelector((state) => state.redeemProducts.data);
 	const points = useSelector((state) => state.points.data);
 	const isLoadingUser = useSelector((state) => state.user.isLoading);
+	const isLoadingPoints = useSelector((state) => state.points.isLoading);
+	const isLoadingRedeem = useSelector(
+		(state) => state.redeemProducts.isLoading
+	);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(fetchUser());
-	}, [points["New Points"]]);
-
-	// console.log(points["New Points"]);
-	// console.log(user);
+	}, [points["New Points"], buyProduct]);
 
 	return (
 		<header className={styles.container}>
@@ -45,7 +47,9 @@ export const Header = () => {
 								setShowPointsModal((prevState) => !prevState)
 							}
 						>
-							{isLoadingUser ? "Loading..." : user.points}
+							{isLoadingUser || isLoadingRedeem || isLoadingPoints
+								? "Loading..."
+								: user.points}
 							<img
 								className={styles.coin}
 								src={coin}

@@ -6,6 +6,7 @@ import { Banner } from "../../sections/banner/Banner";
 import { Filters } from "../../sections/filters/Filters";
 import { useSelector } from "react-redux";
 import { ProductList } from "../../sections/product-list/ProductList";
+import { CountProducts } from "../../components/count-products/CountProducts";
 
 export const Home = () => {
 	const FILTERS = {
@@ -13,12 +14,13 @@ export const Home = () => {
 		LowestPrice: "Lowest price",
 		HighestPrice: "Highest price"
 	};
-
+	// ? Redux state
 	const products = useSelector((state) => state.products.data);
+
+	// ? status to know which filter is active and which case to run
 	const [activeFilter, setActiveFilter] = useState(FILTERS.MostRecent);
 
-	// console.log(products);
-
+	// ? this function sorts the array of products brought from the API
 	const sortedProducts = useMemo(() => {
 		switch (activeFilter) {
 			case FILTERS.LowestPrice:
@@ -43,6 +45,9 @@ export const Home = () => {
 				FILTERS={FILTERS}
 			/>
 			<ProductList sortedProducts={sortedProducts} />
+			<footer className={styles.footer}>
+				<CountProducts products={sortedProducts} />
+			</footer>
 		</main>
 	);
 };

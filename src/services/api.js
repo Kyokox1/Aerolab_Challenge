@@ -6,6 +6,7 @@ const HEADER = {
 
 const URL_API = "https://coding-challenge-api.aerolab.co";
 
+// ? get user parameters of the API
 export const getUser = async () => {
 	try {
 		const options = {
@@ -22,6 +23,7 @@ export const getUser = async () => {
 	}
 };
 
+// ? addPoints
 export const postPoints = async (points) => {
 	try {
 		const options = {
@@ -39,6 +41,7 @@ export const postPoints = async (points) => {
 	}
 };
 
+// ? get products of the API
 export const getProducts = async () => {
 	try {
 		const options = {
@@ -47,6 +50,24 @@ export const getProducts = async () => {
 		};
 
 		const response = await fetch(`${URL_API}/products`, options);
+		const data = await response.json();
+
+		return data;
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+// ? buy products
+export const postRedeem = async (productId) => {
+	try {
+		const options = {
+			method: "POST",
+			body: JSON.stringify({ productId }),
+			headers: HEADER
+		};
+
+		const response = await fetch(`${URL_API}/redeem`, options);
 		const data = await response.json();
 		console.log(data);
 		return data;

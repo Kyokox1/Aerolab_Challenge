@@ -1,12 +1,10 @@
 .nav {
 	display: flex;
-	/* justify-content: space-around; */
 	margin: 0 auto;
 	max-width: 90%;
 	align-items: center;
 	gap: 20px;
-	padding: 10px 0;
-	font-weight: 500;
+	padding: 40px 0 20px;
 }
 
 .filters {
@@ -14,6 +12,9 @@
 	align-items: center;
 	gap: 5px;
 	color: #757171;
+	border-left: 1px #dedede solid;
+	padding-left: 20px;
+	font-weight: 500;
 }
 
 .arrows {

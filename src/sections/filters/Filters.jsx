@@ -1,4 +1,5 @@
 import React from "react";
+import { CountProducts } from "../../components/count-products/CountProducts";
 import { FilterButton } from "../../components/filter-button/FilterButton";
 
 import styles from "./filters.module.css";
@@ -17,7 +18,7 @@ export const Filters = ({
 
 	return (
 		<nav className={styles.nav}>
-			<p>32 of {sortedProducts.length} products</p>
+			<CountProducts products={sortedProducts} />
 			<div className={styles.filters}>
 				<span>Sort by:</span>
 				{filters.map((filter) => (

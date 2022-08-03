@@ -1,3 +1,11 @@
 .container {
 	flex: 1;
+	padding-bottom: 60px;
+}
+
+.footer {
+	max-width: 90%;
+	padding: 50px 0 20px;
+	border-bottom: 1px #dedede solid;
+	margin: 0 auto;
 }

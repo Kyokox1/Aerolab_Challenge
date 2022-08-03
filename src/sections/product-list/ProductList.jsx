@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ProductCard } from "../../components/product-card/ProductCard";
 import { fetchProducts } from "../../redux/slices/products";
 
@@ -13,6 +13,9 @@ export const ProductList = ({ sortedProducts }) => {
 		dispatch(fetchProducts());
 	}, []);
 
+	const points = useSelector((state) => state.user.data.points);
+	console.log(points);
+
 	return (
 		<section className={styles.grid}>
 			{sortedProducts.map((product) => (
@@ -20,6 +23,7 @@ export const ProductList = ({ sortedProducts }) => {
 					setSelectedProduct={setSelectedProduct}
 					isSelected={selectedProduct === product._id}
 					key={product._id}
+					points={points}
 					{...product}
 				/>
 			))}

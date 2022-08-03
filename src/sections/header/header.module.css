@@ -2,13 +2,16 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: sticky;
+	top: -5px;
 	width: 100%;
-	padding: 10px 5%;
+	padding: 15px 5% 10px;
 	margin: 0 auto;
 	font-size: 0.9rem;
 	font-weight: 500;
 	color: #616161;
 	background-color: #ffffff;
+	z-index: 900;
 }
 
 .logo {
