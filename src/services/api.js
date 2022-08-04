@@ -75,3 +75,20 @@ export const postRedeem = async (productId) => {
 		console.log(error);
 	}
 };
+
+// ? get product history
+export const getProductsHistory = async () => {
+	try {
+		const options = {
+			method: "GET",
+			headers: HEADER
+		};
+
+		const response = await fetch(`${URL_API}/user/history`, options);
+		const data = await response.json();
+		console.log(data);
+		return data;
+	} catch (error) {
+		console.log(error);
+	}
+};

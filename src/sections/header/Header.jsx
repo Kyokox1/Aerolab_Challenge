@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 import coin from "../../../public/assets/icons/coin.svg";
 import logo from "../../../public/assets/logo.svg";
+
 import { PointsModal } from "../../components/points-modal/PointsModal";
 import { fetchUser } from "../../redux/slices/user";
 
@@ -31,16 +33,22 @@ export const Header = () => {
 				<span>Loading...</span>
 			) : (
 				<>
-					<div className={styles.logo__container}>
-						<img
-							className={styles.logo}
-							src={logo}
-							alt="logo"
-						></img>
-					</div>
+					<Link to="/">
+						<div className={styles.logo__container}>
+							<img
+								className={styles.logo}
+								src={logo}
+								alt="logo"
+							></img>
+						</div>
+					</Link>
 					<nav className={styles.nav}>
-						<p>{user.name}</p>
-						<p>Redeem History</p>
+						<Link to="/">
+							<p>{user.name}</p>
+						</Link>
+						<Link to="/product-history">
+							<p>Redeem History</p>
+						</Link>
 						<button
 							className={styles.points__button}
 							onClick={() =>

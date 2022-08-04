@@ -1,0 +1,44 @@
+.container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-width: 80%;
+	padding: 10px 0;
+	border: 1px #dedede solid;
+	border-radius: 5px;
+	color: #616161;
+	background: #ffffff;
+	transition: all 0.3s ease;
+}
+
+.container:hover {
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.product__img {
+	width: 150px;
+}
+
+.product__information {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.product__information h4 {
+	font-weight: 500;
+}
+
+.product__information p {
+	color: black;
+}
+.cost {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	color: black;
+}
+
+.cost img {
+	padding-top: 5px;
+}

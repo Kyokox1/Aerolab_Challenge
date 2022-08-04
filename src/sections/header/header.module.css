@@ -27,6 +27,11 @@
 	position: relative;
 }
 
+.nav a {
+	text-decoration: none;
+	color: inherit;
+}
+
 .nav p {
 	cursor: pointer;
 }
