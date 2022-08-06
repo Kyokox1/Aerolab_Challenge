@@ -18,5 +18,15 @@
 }
 
 .arrows {
+	display: flex;
+	align-items: center;
+	gap: 5px;
 	margin-left: auto;
+	filter: invert(20%);
+}
+
+.arrows__right:hover,
+.arrows__left:hover {
+	filter: invert(100%);
+	cursor: pointer;
 }

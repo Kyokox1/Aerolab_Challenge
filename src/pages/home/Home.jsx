@@ -1,11 +1,11 @@
 import React, { useMemo, useState } from "react";
+import { useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
 
 import styles from "./home.module.css";
 
 import { Banner } from "../../sections/banner/Banner";
 import { Filters } from "../../sections/filters/Filters";
-import { useSelector } from "react-redux";
-import { ProductList } from "../../sections/product-list/ProductList";
 import { CountProducts } from "../../components/count-products/CountProducts";
 
 export const Home = () => {
@@ -44,7 +44,8 @@ export const Home = () => {
 				setActiveFilter={setActiveFilter}
 				FILTERS={FILTERS}
 			/>
-			<ProductList sortedProducts={sortedProducts} />
+			<Outlet context={{ sortedProducts }} />
+			{/* <ProductList sortedProducts={sortedProducts} /> */}
 			<footer className={styles.footer}>
 				<CountProducts products={sortedProducts} />
 			</footer>

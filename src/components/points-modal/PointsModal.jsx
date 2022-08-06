@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import coin from "../../../public/assets/icons/coin.svg";
-import logo from "../../../public/assets/logo.svg";
 import { addPointsAmount } from "../../redux/slices/addPoints";
+
+import logo from "../../../public/assets/logo.svg";
+import coin from "../../../public/assets/icons/coin.svg";
 
 import styles from "./pointsModal.module.css";
 

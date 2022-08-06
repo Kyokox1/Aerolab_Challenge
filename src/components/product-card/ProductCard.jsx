@@ -1,12 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { addProducts } from "../../redux/slices/redeemProducts";
+
 import coin from "../../../public/assets/icons/coin.svg";
 import buyBlue from "../../../public/assets/icons/buy-blue.svg";
 import buyWhite from "../../../public/assets/icons/buy-white.svg";
 
 import styles from "./productCard.module.css";
-import { addProducts } from "../../redux/slices/redeemProducts";
 
 export const ProductCard = ({
 	name,
