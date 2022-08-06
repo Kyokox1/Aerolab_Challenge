@@ -17,16 +17,22 @@
 	font-weight: 500;
 }
 
+.select__container {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
 .arrows {
 	display: flex;
 	align-items: center;
 	gap: 5px;
 	margin-left: auto;
-	filter: invert(20%);
+	filter: invert(70%);
 }
 
 .arrows__right:hover,
 .arrows__left:hover {
-	filter: invert(100%);
+	filter: invert(80%);
 	cursor: pointer;
 }

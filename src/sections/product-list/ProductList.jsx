@@ -24,11 +24,13 @@ export const ProductList = () => {
 	if (page !== "2" && page !== "1" && page !== undefined) {
 		return <Navigate to="/" />;
 	}
+
+	const pageTwoCondition = page === "2" && sortedProducts.length >= 16;
 	return (
 		<section className={styles.grid}>
 			{sortedProducts &&
 				sortedProducts.map((product, i) =>
-					page === "2"
+					pageTwoCondition
 						? i >= 16 && (
 								<ProductCard
 									setSelectedProduct={setSelectedProduct}

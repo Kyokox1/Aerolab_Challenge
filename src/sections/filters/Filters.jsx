@@ -8,12 +8,15 @@ import { CountProducts } from "../../components/count-products/CountProducts";
 import { FilterButton } from "../../components/filter-button/FilterButton";
 
 import styles from "./filters.module.css";
+import { SelectList } from "../../components/select-list/SelectList";
 
 export const Filters = ({
 	activeFilter,
 	setActiveFilter,
 	FILTERS,
-	sortedProducts
+	sortedProducts,
+	setSelect,
+	products
 }) => {
 	const filters = [
 		FILTERS.MostRecent,
@@ -29,9 +32,10 @@ export const Filters = ({
 	// });
 
 	// ? Array with filtered categories
-	const categories = sortedProducts
+	const categories = products
 		.map((product) => product.category)
 		.filter((product, indice, array) => array.indexOf(product) === indice);
+
 	return (
 		<nav className={styles.nav}>
 			<CountProducts products={sortedProducts} />
@@ -46,12 +50,8 @@ export const Filters = ({
 					/>
 				))}
 			</div>
-			<div>
-				<select name="select">
-					{categories.map((category) => (
-						<option key={category}>{category}</option>
-					))}
-				</select>
+			<div className={styles.select__container}>
+				<SelectList categories={categories} setSelect={setSelect} />
 			</div>
 			<div className={styles.arrows}>
 				<Link to="/">
