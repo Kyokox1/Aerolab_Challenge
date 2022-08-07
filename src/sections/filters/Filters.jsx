@@ -41,14 +41,16 @@ export const Filters = ({
 			<CountProducts products={sortedProducts} />
 			<div className={styles.filters}>
 				<span>Sort by:</span>
-				{filters.map((filter) => (
-					<FilterButton
-						key={`filter${filter}`}
-						activeFilter={activeFilter}
-						setActiveFilter={setActiveFilter}
-						filter={filter}
-					/>
-				))}
+				<div className={styles.filters__buttons}>
+					{filters.map((filter) => (
+						<FilterButton
+							key={`filter${filter}`}
+							activeFilter={activeFilter}
+							setActiveFilter={setActiveFilter}
+							filter={filter}
+						/>
+					))}
+				</div>
 			</div>
 			<div className={styles.select__container}>
 				<SelectList categories={categories} setSelect={setSelect} />

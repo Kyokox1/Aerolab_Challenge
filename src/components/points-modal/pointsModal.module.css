@@ -49,3 +49,19 @@
 	border-radius: 4px;
 	cursor: pointer;
 }
+
+@media (max-width: 425px) {
+	.container {
+		font-size: 0.8rem;
+		left: 40%;
+		transform: translateX(-50%);
+	}
+
+	.header {
+		font-size: 1.1rem;
+	}
+
+	.cancel__button {
+		font-size: 0.9rem;
+	}
+}

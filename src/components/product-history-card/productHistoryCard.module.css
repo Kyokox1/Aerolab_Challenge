@@ -2,6 +2,7 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	position: relative;
 	min-width: 80%;
 	padding: 10px 0;
 	border: 1px #dedede solid;
@@ -19,10 +20,15 @@
 	width: 150px;
 }
 
+.container__info {
+	display: flex;
+	flex: 1;
+	justify-content: space-around;
+}
+
 .product__information {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
 }
 
 .product__information h4 {
@@ -41,4 +47,47 @@
 
 .cost img {
 	padding-top: 5px;
+}
+
+@media (max-width: 940px) {
+	.container {
+		min-width: 90%;
+		font-size: 0.85rem;
+	}
+}
+
+@media (max-width: 760px) {
+	.container {
+		min-width: 90%;
+		font-size: 0.85rem;
+	}
+	.container__info {
+		flex-direction: column;
+		text-align: center;
+		gap: 10px;
+	}
+}
+
+@media (max-width: 425px) {
+	.container {
+		padding: 20px 0;
+		min-width: 95%;
+	}
+
+	.container__info {
+		text-align: initial;
+	}
+
+	.cost {
+		position: absolute;
+		bottom: 0;
+		left: 45px;
+	}
+}
+
+@media (max-width: 350px) {
+	.container {
+		padding: 20px 0 30px;
+		font-size: 0.7rem;
+	}
 }

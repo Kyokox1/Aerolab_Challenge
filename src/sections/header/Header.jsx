@@ -44,7 +44,7 @@ export const Header = () => {
 					</Link>
 					<nav className={styles.nav}>
 						<Link to="/">
-							<p>{user.name}</p>
+							<p className={styles.user__name}>{user.name}</p>
 						</Link>
 						<Link to="/product-history">
 							<p>Redeem History</p>

@@ -16,8 +16,8 @@ export const ProductCard = ({
 	img,
 	category,
 	isSelected,
-	setSelectedProduct
-	// points
+	setSelectedProduct,
+	points
 }) => {
 	// ? Redux
 	const isLoadingRedeem = useSelector(
@@ -30,7 +30,7 @@ export const ProductCard = ({
 	const buyProduct = (ProductId) => {
 		dispatch(addProducts(ProductId));
 	};
-	const points = 1299;
+
 	const canBuy = points >= cost;
 
 	return (

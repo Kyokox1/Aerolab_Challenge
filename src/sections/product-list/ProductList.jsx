@@ -12,12 +12,11 @@ export const ProductList = () => {
 	const [selectedProduct, setSelectedProduct] = useState(null);
 
 	const { page } = useParams();
+	const { sortedProducts } = useOutletContext();
 
 	useEffect(() => {
 		dispatch(fetchProducts());
 	}, []);
-
-	const { sortedProducts } = useOutletContext();
 
 	const points = useSelector((state) => state.user.data.points);
 

@@ -17,6 +17,11 @@
 	font-weight: 500;
 }
 
+.filters__buttons {
+	display: flex;
+	gap: 5px;
+}
+
 .select__container {
 	display: flex;
 	gap: 10px;
@@ -35,4 +40,50 @@
 .arrows__left:hover {
 	filter: invert(80%);
 	cursor: pointer;
+}
+
+@media (max-width: 1074px) {
+	.nav {
+		font-size: 0.8rem;
+	}
+}
+
+@media (max-width: 935px) {
+	.filters__buttons {
+		font-size: 0.9rem;
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 715px) {
+	.nav {
+		flex-direction: column;
+	}
+
+	.filters {
+		flex-direction: column;
+		border-left: none;
+		border-top: 1px #dedede solid;
+		padding-top: 5px;
+		min-width: 100%;
+	}
+
+	.filters__buttons {
+		flex-direction: row;
+	}
+
+	.select__container {
+		flex-direction: column;
+	}
+
+	.arrows {
+		margin: 0;
+		gap: 20px;
+	}
+}
+
+@media (max-width: 375px) {
+	.filters__buttons {
+		font-size: 0.7rem;
+	}
 }

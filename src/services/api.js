@@ -69,7 +69,7 @@ export const postRedeem = async (productId) => {
 
 		const response = await fetch(`${URL_API}/redeem`, options);
 		const data = await response.json();
-		console.log(data);
+
 		return data;
 	} catch (error) {
 		console.log(error);
@@ -86,7 +86,7 @@ export const getProductsHistory = async () => {
 
 		const response = await fetch(`${URL_API}/user/history`, options);
 		const data = await response.json();
-		console.log(data);
+
 		return data;
 	} catch (error) {
 		console.log(error);

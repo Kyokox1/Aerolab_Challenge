@@ -17,17 +17,19 @@ export const ProductHistoryCard = ({
 	return (
 		<section className={styles.container}>
 			<img className={styles.product__img} src={img.url} alt={name} />
-			<div className={styles.product__information}>
-				<h4>{category}</h4>
-				<p>{name}</p>
-			</div>
-			<div className={styles.product__information}>
-				<h4>Redeemed</h4>
-				<p>{date}</p>
-			</div>
-			<div className={styles.product__information}>
-				<h4>Transaction ID</h4>
-				<p>{_id}</p>
+			<div className={styles.container__info}>
+				<div className={styles.product__information}>
+					<h4>{category}</h4>
+					<p>{name}</p>
+				</div>
+				<div className={styles.product__information}>
+					<h4>Redeemed</h4>
+					<p>{date}</p>
+				</div>
+				<div className={styles.product__information}>
+					<h4>Transaction ID</h4>
+					<p>{_id}</p>
+				</div>
 			</div>
 			<div className={styles.cost}>
 				{cost}
