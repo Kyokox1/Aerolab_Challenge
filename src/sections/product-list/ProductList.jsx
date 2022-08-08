@@ -6,9 +6,11 @@ import { Navigate, useOutletContext, useParams } from "react-router-dom";
 import { ProductCard } from "../../components/product-card/ProductCard";
 
 import styles from "./productList.module.css";
+import { Spinner } from "../../components/spinner/Spinner";
 
 export const ProductList = () => {
 	const dispatch = useDispatch();
+	const isLoadingProducts = useSelector((state) => state.products.isLoading);
 	const [selectedProduct, setSelectedProduct] = useState(null);
 
 	const { page } = useParams();
@@ -25,6 +27,11 @@ export const ProductList = () => {
 	}
 
 	const pageTwoCondition = page === "2" && sortedProducts.length >= 16;
+
+	if (isLoadingProducts) {
+		return <Spinner />;
+	}
+
 	return (
 		<section className={styles.grid}>
 			{sortedProducts &&

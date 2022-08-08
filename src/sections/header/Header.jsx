@@ -6,6 +6,8 @@ import coin from "../../../public/assets/icons/coin.svg";
 import logo from "../../../public/assets/logo.svg";
 
 import { PointsModal } from "../../components/points-modal/PointsModal";
+import { Spinner } from "../../components/spinner/Spinner";
+
 import { fetchUser } from "../../redux/slices/user";
 
 import styles from "./header.module.css";
@@ -30,7 +32,7 @@ export const Header = () => {
 	return (
 		<header className={styles.container}>
 			{Object.entries(user).length === 0 ? (
-				<span>Loading...</span>
+				<Spinner size={"medium"} />
 			) : (
 				<>
 					<Link to="/">
@@ -55,9 +57,15 @@ export const Header = () => {
 								setShowPointsModal((prevState) => !prevState)
 							}
 						>
-							{isLoadingUser || isLoadingRedeem || isLoadingPoints
-								? "Loading..."
-								: user.points}
+							{isLoadingUser ||
+							isLoadingRedeem ||
+							isLoadingPoints ? (
+								<div className={styles.spinner}>
+									<Spinner size={"small"} />
+								</div>
+							) : (
+								user.points
+							)}
 							<img
 								className={styles.coin}
 								src={coin}
