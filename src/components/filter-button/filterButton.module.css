@@ -22,3 +22,9 @@
 	background: #0ad4fa;
 	color: #ffffff;
 }
+
+@media (max-width: 910px) {
+	.button {
+		padding: 10px 10px;
+	}
+}

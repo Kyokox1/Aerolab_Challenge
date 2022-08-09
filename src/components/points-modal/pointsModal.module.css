@@ -35,19 +35,27 @@
 	cursor: pointer;
 }
 
+.amounts button:hover {
+	background: #edf2f7;
+}
+
 .amounts img {
 	width: 20px;
 	padding-top: 2px;
 }
 
 .cancel__button {
-	min-width: 60%;
-	padding: 5px;
+	min-width: 100%;
+	padding: 8px;
 	font-size: 1rem;
 	color: #616161;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
+}
+
+.cancel__button:hover {
+	background-color: #e5e9ed;
 }
 
 @media (max-width: 425px) {
