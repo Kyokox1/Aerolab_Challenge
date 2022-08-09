@@ -49,6 +49,10 @@
 	cursor: pointer;
 }
 
+.points__button:hover {
+	background: #d0d0d0;
+}
+
 .coin {
 	padding-top: 2px;
 	width: 20px;
