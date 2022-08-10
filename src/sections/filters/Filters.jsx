@@ -63,7 +63,7 @@ export const Filters = ({
 						alt="arrow-right"
 					/>
 				</Link>
-				<Link to="/2">
+				<Link to="2">
 					<img
 						className={styles.arrows__right}
 						src={arrowRight}

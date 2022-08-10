@@ -48,26 +48,25 @@ export const Header = () => {
 						</div>
 					</Link>
 					<nav className={styles.nav}>
-						<NavLink to="/">
-							<p
-								className={`${styles.user__name} ${
-									pathname !== "/product-history" &&
-									styles.active
-								} `}
-							>
-								{user.name}
-							</p>
+						<NavLink
+							to="/"
+							className={({ isActive }) =>
+								isActive | (pathname !== "/product-history")
+									? styles.active
+									: undefined
+							}
+						>
+							<p className={styles.user__name}>{user.name}</p>
 						</NavLink>
-						<Link to="/product-history">
-							<p
-								className={
-									pathname === "/product-history" &&
-									styles.active
-								}
-							>
-								Redeem History
-							</p>
-						</Link>
+						<NavLink
+							to="product-history"
+							className={({ isActive }) =>
+								isActive ? styles.active : undefined
+							}
+						>
+							<p>Redeem History</p>
+						</NavLink>
+
 						<button
 							className={styles.points__button}
 							onClick={() =>

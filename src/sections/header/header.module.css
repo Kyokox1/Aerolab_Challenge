@@ -29,14 +29,10 @@
 
 .nav a {
 	text-decoration: none;
-	color: inherit;
-}
-
-.nav p {
 	cursor: pointer;
 }
 
-.nav p:hover {
+.nav a:hover {
 	color: #0ad4fa;
 }
 

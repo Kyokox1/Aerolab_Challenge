@@ -9,18 +9,20 @@ import styles from "./productList.module.css";
 import { Spinner } from "../../components/spinner/Spinner";
 
 export const ProductList = () => {
-	const dispatch = useDispatch();
-	const isLoadingProducts = useSelector((state) => state.products.isLoading);
 	const [selectedProduct, setSelectedProduct] = useState(null);
 
+	// ? Redux
+	const dispatch = useDispatch();
+	const isLoadingProducts = useSelector((state) => state.products.isLoading);
+	const points = useSelector((state) => state.user.data.points);
+
+	// ? Router
 	const { page } = useParams();
 	const { sortedProducts } = useOutletContext();
 
 	useEffect(() => {
 		dispatch(fetchProducts());
 	}, []);
-
-	const points = useSelector((state) => state.user.data.points);
 
 	if (page !== "2" && page !== "1" && page !== undefined) {
 		return <Navigate to="/" />;
