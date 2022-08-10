@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 import coin from "../../../public/assets/icons/coin.svg";
 import logo from "../../../public/assets/logo.svg";
@@ -25,6 +25,9 @@ export const Header = () => {
 	);
 	const dispatch = useDispatch();
 
+	// ? Router
+	const { pathname } = useLocation();
+
 	useEffect(() => {
 		dispatch(fetchUser());
 	}, [points["New Points"], buyProduct]);
@@ -45,11 +48,25 @@ export const Header = () => {
 						</div>
 					</Link>
 					<nav className={styles.nav}>
-						<Link to="/">
-							<p className={styles.user__name}>{user.name}</p>
-						</Link>
+						<NavLink to="/">
+							<p
+								className={`${styles.user__name} ${
+									pathname !== "/product-history" &&
+									styles.active
+								} `}
+							>
+								{user.name}
+							</p>
+						</NavLink>
 						<Link to="/product-history">
-							<p>Redeem History</p>
+							<p
+								className={
+									pathname === "/product-history" &&
+									styles.active
+								}
+							>
+								Redeem History
+							</p>
 						</Link>
 						<button
 							className={styles.points__button}

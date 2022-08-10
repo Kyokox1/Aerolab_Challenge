@@ -36,6 +36,14 @@
 	cursor: pointer;
 }
 
+.nav p:hover {
+	color: #0ad4fa;
+}
+
+.active {
+	color: #0ad4fa;
+}
+
 .points__button {
 	display: flex;
 	align-items: center;
