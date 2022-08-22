@@ -9,17 +9,17 @@
 }
 
 .active {
-	background-color: #0ad4fa;
+	background-color: #a5039a;
 	color: #ffffff;
 }
 
 .button:hover {
-	background-color: #c2baba;
+	background-color: #a5039a;
 	color: #ffffff;
 }
 
 .active:hover {
-	background: #0ad4fa;
+	background: #a5039a;
 	color: #ffffff;
 }
 
